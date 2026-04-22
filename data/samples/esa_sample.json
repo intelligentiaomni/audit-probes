@@ -1,0 +1,8 @@
+[
+  { "time": 0, "altitude": 1200 },
+  { "time": 1, "altitude": 1250 },
+  { "time": 2, "altitude": null },
+  { "time": 3, "altitude": 1325 },
+  { "time": 4, "altitude": 4100 },
+  { "time": 5, "altitude": 1390 }
+]

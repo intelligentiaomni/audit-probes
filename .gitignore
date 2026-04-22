@@ -27,3 +27,5 @@ results/
 !results/**/.gitkeep
 
 *.log
+
+echo "data/targets/ghasum/" >> .gitignore
