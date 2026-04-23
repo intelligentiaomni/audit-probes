@@ -1,9 +1,11 @@
+# --- Local Environment & Security ---
+
+.env
+ENV/
 .venv/
 venv/
-env/
-ENV/
-
 __pycache__/
+*.pyc
 *.py[cod]
 *$py.class
 
@@ -22,10 +24,27 @@ Thumbs.db
 .vscode/
 .idea/
 
+# --- Python Build Artifacts ---
+# These contain the "Metadata Drift" (like PKG-INFO)
+
+*.egg-info/
+dist/
+build/
+sdist/
+
+# --- Infrastructure & Tooling ---
+# If using Terraform for your cloud infra
+
+.terraform/
+*.tfstate
+*.tfstate.backup
+
+# --- Logs and Local Attestations ---
+
 results/
 !results/.gitkeep
 !results/**/.gitkeep
-
+artifacts/*.json
+artifacts/*.log
 *.log
-
 echo "data/targets/ghasum/" >> .gitignore

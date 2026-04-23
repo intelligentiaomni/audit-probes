@@ -1,0 +1,17 @@
+```
+audit:
+  target_path: "data/targets/ghasum"
+  output_dir: "artifacts/reports"
+  log_dir: "artifacts/logs"
+
+security:
+  scan_secrets: true
+  patterns:
+    - "API_KEY"
+    - "SECRET"
+    - "TOKEN"
+
+telemetry:
+  enable_visualization: true
+  sample_file: "data/samples/esa_sample.json"
+```

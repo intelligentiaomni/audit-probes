@@ -16,7 +16,12 @@ dependencies = [
   "matplotlib>=3.8",
   "pandas>=2.2",
   "requests>=2.31",
+  "pyyaml",
+  "matplotlib",
 ]
 
 [tool.setuptools]
-packages = ["audit_probes"]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

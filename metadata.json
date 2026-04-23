@@ -1,0 +1,8 @@
+{
+  "timestamp": "...",
+  "target": "ghasum",
+  "config_hash": "...",
+  "probe_versions": {
+    "cyber_audit": "v0.1"
+  }
+}

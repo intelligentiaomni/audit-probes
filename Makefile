@@ -1,0 +1,3 @@
+- create timestamped run dir
+- copy config → run/
+- route outputs → run/
