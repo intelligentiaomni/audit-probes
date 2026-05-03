@@ -1,14 +1,14 @@
 ## Cyber Audit
 
-Target: Cybercampus Sverige Junior Infrastructure Support 
+Target: Cybercampus Sverige
 
 ### Purpose
 
-`cyber_audit` is a lightweight repository-audit module for investigating practical security review in an open-source technical setting. It automates a first-pass scan for possible exposed secrets, dependency version risks, and unsafe environment-variable usage.
+`cyber_audit` is a lightweight repository-audit module for exploring practical security review in an open-source setting. It automates a first-pass scan for possible exposed secrets, dependency version risks, and unsafe environment-variable usage.
 
 The aim is not to replace a full security assessment, but to show a traceable workflow between manual review and Python-based automation.
 
-### Stack
+### Tech Stack
 
 - Python 3.11
 - standard-library scanning and JSON logging
@@ -34,7 +34,7 @@ python -c "from audit_probes.cyber_audit import audit_repository; print(audit_re
 
 A fixed sample input can be used to inspect output without external credentials or API access.
 
-### Method
+### Methodology
 
 The audit uses simple, inspectable rules rather than opaque heuristics. Current checks include:
 

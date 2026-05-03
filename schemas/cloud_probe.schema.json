@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "https://example.org/audit-probes/schemas/cloud_probe.schema.json",
+  "title": "Cloud Probe Consistency Summary",
+  "description": "Structured output emitted by audit_probes.cloud_probe.probe_consistency.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "url",
+    "attempts",
+    "success_rate",
+    "average_latency",
+    "status_codes",
+    "unique_fingerprints",
+    "consistent_payload",
+    "results"
+  ],
+  "properties": {
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "minLength": 1
+    },
+    "attempts": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "success_rate": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "average_latency": {
+      "type": "number",
+      "minimum": 0
+    },
+    "status_codes": {
+      "type": "array",
+      "items": { "type": "integer", "minimum": 100, "maximum": 599 },
+      "uniqueItems": true
+    },
+    "unique_fingerprints": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{16}$"
+      },
+      "uniqueItems": true
+    },
+    "consistent_payload": {
+      "type": "boolean"
+    },
+    "results": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/probeResult" }
+    }
+  },
+  "definitions": {
+    "probeResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "status", "latency", "size", "fingerprint"],
+      "properties": {
+        "ok": { "type": "boolean" },
+        "status": {
+          "anyOf": [
+            { "type": "integer", "minimum": 100, "maximum": 599 },
+            { "type": "null" }
+          ]
+        },
+        "latency": { "type": "number", "minimum": 0 },
+        "size": { "type": "integer", "minimum": 0 },
+        "fingerprint": {
+          "anyOf": [
+            { "type": "string", "pattern": "^[0-9a-f]{16}$" },
+            { "type": "null" }
+          ]
+        },
+        "error": { "type": "string" }
+      }
+    }
+  }
+}

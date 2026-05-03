@@ -4,11 +4,11 @@ Target: Stockholm Tech Show / cloud and AI infrastructure observability
 
 ### Purpose
 
-`cloud_probe` is a lightweight probing module for measuring API latency and response consistency across repeated requests. It was built to explore infrastructure behavior empirically rather than relying only on vendor claims or static documentation.
+`cloud_probe` is a lightweight probing module for measuring API latency and response consistency across repeated requests. It was built to interrogate infrastructure behavior empirically rather than relying only on vendor claims or static documentation.
 
 The aim is to provide a minimal, inspectable measurement tool that supports systems thinking and basic observability.
 
-### Stack
+### Tech Stack
 
 - Python 3.11
 - `requests` for HTTP probing
@@ -33,19 +33,19 @@ python -c "from audit_probes.cloud_probe import probe_consistency; print(probe_c
 
 Given a fixed endpoint and a fixed number of attempts, the script produces bounded and inspectable output.
 
-### Method
+### Methodology
 
-The probe records a limited set of observable signals:
+The probe records a small set of observable signals:
 
 - HTTP status code
 - response latency
 - payload size
 - repeated-response fingerprint consistency
 
-This keeps the module simple enough to inspect directly, while still being useful for quick infrastructure checks.
+This keeps the module simple enough to inspect directly while still being useful for quick infrastructure checks.
 
 ### Limitations
 
 - latency is measured without network normalization
 - results are affected by normal network variance
-- the probe is a lightweight interrogative tool, not a substitute for full observability infrastructure
+- the probe is a lightweight exploratory tool, not a substitute for full observability infrastructure

@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "https://example.org/audit-probes/schemas/cyber_audit.schema.json",
+  "title": "Cyber Audit Report",
+  "description": "Structured output emitted by audit_probes.cyber_audit.audit_repository.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["target", "summary", "findings", "errors"],
+  "properties": {
+    "target": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Absolute path of the audited repository or directory."
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["findings", "high", "medium", "low", "errors"],
+      "properties": {
+        "findings": { "type": "integer", "minimum": 0 },
+        "high": { "type": "integer", "minimum": 0 },
+        "medium": { "type": "integer", "minimum": 0 },
+        "low": { "type": "integer", "minimum": 0 },
+        "errors": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/finding" }
+    },
+    "errors": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "definitions": {
+    "finding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["category", "file", "line", "severity", "match", "detail"],
+      "properties": {
+        "category": {
+          "type": "string",
+          "enum": [
+            "hardcoded_secret",
+            "secret_keyword",
+            "env_without_default",
+            "env_without_guard",
+            "replace_directive",
+            "local_replace_directive",
+            "unbounded_dependency",
+            "outdated_dependency"
+          ]
+        },
+        "file": { "type": "string", "minLength": 1 },
+        "line": { "type": "integer", "minimum": 1 },
+        "severity": { "type": "string", "enum": ["high", "medium", "low"] },
+        "match": { "type": "string" },
+        "detail": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

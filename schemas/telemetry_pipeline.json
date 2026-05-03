@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "https://example.org/audit-probes/schemas/telemetry_pipeline.json",
+  "title": "Telemetry Sample Dataset",
+  "description": "Input records accepted by audit_probes.telemetry_pipeline.load_telemetry before cleaning and anomaly flagging.",
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "additionalProperties": true,
+    "required": ["time", "altitude"],
+    "properties": {
+      "time": {
+        "type": "number",
+        "description": "Monotonic sample index or timestamp used for sorting."
+      },
+      "altitude": {
+        "anyOf": [
+          { "type": "number" },
+          { "type": "null" }
+        ],
+        "description": "Altitude observation before cleaning; null values are interpolated."
+      }
+    }
+  }
+}

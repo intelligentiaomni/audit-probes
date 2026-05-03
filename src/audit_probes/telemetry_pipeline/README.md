@@ -1,14 +1,14 @@
 ## Telemetry Pipeline
 
-Target: KTH Space Center / ORBIT-oriented telemetry active discovery
+Target: KTH Space Center / ORBIT-oriented telemetry investigation
 
 ### Purpose
 
-`telemetry_pipeline` is a small, reproducible data-processing module for working with public telemetry datasets. It was built to explore how noisy orbital or suborbital data can be cleaned and visualized without hiding the assumptions that shape the result.
+`telemetry_pipeline` is a minimal, reproducible data-processing module for working with public telemetry-style datasets. It was built to explore how noisy orbital or suborbital data can be cleaned and visualized without hiding the assumptions that shape the result.
 
 The goal is not only to produce a readable plot, but to keep the analysis scientifically honest when values are missing, filtered, or interpolated.
 
-### Stack
+### Tech Stack
 
 - Python 3.11
 - `pandas` for ingestion and cleaning
@@ -35,7 +35,7 @@ A fixed sample dataset is included so the pipeline can be run without external A
 
 ### Methodology
 
-The pipeline follows a simple, inspectable workflow:
+The pipeline follows a simple, inspectable flow:
 
 - ingest telemetry from CSV or JSON
 - remove invalid or non-physical values
