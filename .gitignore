@@ -48,3 +48,7 @@ artifacts/*.json
 artifacts/*.log
 *.log
 echo "data/targets/ghasum/" >> .gitignore
+
+# --- Internal Lab & Drafts (Private) ---
+paper/
+*.zip
