@@ -31,7 +31,7 @@ def load_telemetry(path: str | Path):
 
     if file_path.suffix.lower() == ".json":
         payload = json.loads(file_path.read_text(encoding="utf-8"))
-        records = payload.get("records", payload)
+        records = payload.get("records", payload) if isinstance(payload, dict) else payload
         return pd.DataFrame(records)
 
     raise ValueError(f"Unsupported telemetry format: {file_path.suffix}")

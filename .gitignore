@@ -47,8 +47,24 @@ results/
 artifacts/*.json
 artifacts/*.log
 *.log
-echo "data/targets/ghasum/" >> .gitignore
+data/targets/ghasum/
 
 # --- Internal Lab & Drafts (Private) ---
-paper/
+paper/*
+!paper/arxiv/
+paper/arxiv/*
+!paper/arxiv/README.md
+!paper/arxiv/audit_probes_technical_report.tex
+!paper/arxiv/figures/
+paper/arxiv/figures/*
+!paper/arxiv/figures/data_flow_cover_v010.png
+!paper/arxiv/figures/telemetry_baseline_v010.png
+paper/**/*.aux
+paper/**/*.bbl
+paper/**/*.fdb_latexmk
+paper/**/*.fls
+paper/**/*.log
+paper/**/*.out
+paper/**/*.pdf
+paper/**/*.synctex.gz
 *.zip

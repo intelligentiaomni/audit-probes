@@ -1,5 +1,14 @@
-import osimport subprocessimport shutilimport re
-# --- CONFIGURATION ---INPUT_DIR = "paper"OUTPUT_DIR = "arxiv_submission"ZIP_NAME = "submission_v1.zip"
+import os
+import subprocess
+import shutil
+import re
+
+# --- CONFIGURATION ---
+INPUT_DIR = "paper/arxiv"
+OUTPUT_DIR = "arxiv_submission"
+ZIP_NAME = "submission_v1.zip"
+
+
 def check_unescaped_percent(directory):
     """Scans .tex files for '%' signs not preceded by '\'."""
     pattern = re.compile(r'(?<!\\)%')
@@ -19,6 +28,8 @@ def check_unescaped_percent(directory):
                             print(f"Potential issue in {file} (Line {i}): {line.strip()}")
                             issues_found = True
     return issues_found
+
+
 def main():
     # 1. Run Safety Check
     # Check the INPUT_DIR first to fix them before distilling
@@ -37,5 +48,7 @@ def main():
     shutil.make_archive(ZIP_NAME.replace(".zip", ""), 'zip', OUTPUT_DIR)
 
     print(f"Ready! Upload {ZIP_NAME} to arXiv.")
+
+
 if __name__ == "__main__":
     main()

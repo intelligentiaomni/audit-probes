@@ -47,3 +47,23 @@ Automation was used only for non-critical scaffolding and boilerplate support. C
 ### Technical Report Insert [Metrics and Figures](./docs/TECH_REPORT_SECTION.md)
 ### Notes [Theoretical Background](./docs/NOTES.md)
 ### Verification [Limitations](./docs/VERIFICATION.md)
+
+## Citation
+
+This repository is prepared for archival through the Zenodo-GitHub integration.
+After creating a Zenodo release, use the generated DOI in the arXiv submission
+`Code` field and update the DOI placeholder below.
+
+```bibtex
+@software{lee_audit_probes_2026,
+  author = {Lee, L. S.},
+  title = {Audit Probes},
+  year = {2026},
+  version = {0.1.0},
+  license = {MIT},
+  url = {https://github.com/intelligentiaomni/audit-probes},
+  doi = {TO_BE_ASSIGNED_BY_ZENODO}
+}
+```
+
+Preferred citation metadata is also provided in [`CITATION.cff`](./CITATION.cff).

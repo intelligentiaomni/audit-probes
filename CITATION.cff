@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use Audit Probes in research, please cite the archived software release."
+type: software
+title: "Audit Probes"
+authors:
+  - family-names: "Lee"
+    given-names: "L.S."
+repository-code: "https://github.com/intelligentiaomni/audit-probes"
+url: "https://github.com/intelligentiaomni/audit-probes"
+license: "MIT"
+version: "0.1.0"
+date-released: "2026-05-04"
+abstract: "Minimal cross-domain audit probes for reproducible software supply-chain review, telemetry validation, and cloud/API observability."
+keywords:
+  - audit probes
+  - systemic risk
+  - software supply chain
+  - telemetry validation
+  - cloud observability
+  - minimum viable disclosure
+  - reproducible audit evidence
