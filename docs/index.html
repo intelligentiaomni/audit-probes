@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Audit Probes is a minimal research toolkit for reproducible software supply-chain, telemetry, and cloud observability experiments."
+    >
+    <title>Audit Probes</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <header class="site-header" aria-label="Primary">
+      <a class="brand" href="./index.html">Audit Probes</a>
+      <nav class="nav-links" aria-label="Project links">
+        <a href="https://github.com/intelligentiaomni/audit-probes">GitHub</a>
+        <a href="https://github.com/intelligentiaomni/audit-probes/blob/main/paper/arxiv/audit_probes_technical_report.tex">Paper Source</a>
+        <a href="https://github.com/intelligentiaomni/audit-probes/blob/main/CITATION.cff">Citation</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">v0.1.0 baseline</p>
+          <h1>Audit probes for empirical systems reliability.</h1>
+          <p class="lede">
+            Minimal instrumentation for reproducible software supply-chain review,
+            telemetry validation, and cloud/API observability.
+          </p>
+          <div class="actions" aria-label="Primary actions">
+            <a class="button primary" href="https://github.com/intelligentiaomni/audit-probes">View repository</a>
+            <a class="button secondary" href="https://github.com/intelligentiaomni/audit-probes/blob/main/paper/arxiv/audit_probes_technical_report.tex">Read TeX source</a>
+          </div>
+        </div>
+        <figure class="hero-figure">
+          <img src="./assets/data_flow_cover_v010.png" alt="Data flow cover visualization for Audit Probes">
+        </figure>
+      </section>
+
+      <section class="metrics" aria-label="Baseline metrics">
+        <div>
+          <span class="metric-value">11/11</span>
+          <span class="metric-label">tests passing</span>
+        </div>
+        <div>
+          <span class="metric-value">0.000000</span>
+          <span class="metric-label">pass/fail entropy</span>
+        </div>
+        <div>
+          <span class="metric-value">MIT</span>
+          <span class="metric-label">research code license</span>
+        </div>
+      </section>
+
+      <section class="section-grid" aria-label="Probe modules">
+        <article>
+          <h2>Cyber Audit</h2>
+          <p>Rule-based repository checks for secret exposure, dependency drift, and risky environment-variable access.</p>
+          <a href="https://github.com/intelligentiaomni/audit-probes/blob/main/src/audit_probes/cyber_audit/README.md">Module note</a>
+        </article>
+        <article>
+          <h2>Telemetry Pipeline</h2>
+          <p>Assumption-explicit cleaning for local telemetry records, interpolation, and abrupt signal-jump flags.</p>
+          <a href="https://github.com/intelligentiaomni/audit-probes/blob/main/src/audit_probes/telemetry_pipeline/README.md">Module note</a>
+        </article>
+        <article>
+          <h2>Cloud Probe</h2>
+          <p>Endpoint probing for latency, payload size, status, success rate, and response fingerprint consistency.</p>
+          <a href="https://github.com/intelligentiaomni/audit-probes/blob/main/src/audit_probes/cloud_probe/README.md">Module note</a>
+        </article>
+      </section>
+
+      <section class="evidence" aria-label="Telemetry evidence">
+        <div class="evidence-copy">
+          <p class="eyebrow">minimum viable disclosure</p>
+          <h2>Bounded traces, reproducible evidence.</h2>
+          <p>
+            The baseline favors deterministic outputs, JSON schemas, and test-log metrics over expansive raw telemetry.
+            The result is a compact artifact that can be inspected, cited, and extended.
+          </p>
+        </div>
+        <figure>
+          <img src="./assets/telemetry_baseline_v010.png" alt="Telemetry baseline plot showing interpolation and an anomaly flag">
+        </figure>
+      </section>
+
+      <section class="citation" aria-label="Citation">
+        <h2>Citation</h2>
+        <pre><code>@software{lee_audit_probes_2026,
+  author = {Lee, L. S.},
+  title = {Audit Probes},
+  year = {2026},
+  version = {0.1.0},
+  license = {MIT},
+  url = {https://github.com/intelligentiaomni/audit-probes},
+  doi = {TO_BE_ASSIGNED_BY_ZENODO}
+}</code></pre>
+      </section>
+    </main>
+  </body>
+</html>

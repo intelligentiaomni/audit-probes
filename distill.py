@@ -1,53 +1,53 @@
-import os
-import subprocess
+"""Build a minimal arXiv source zip from the prepared paper directory."""
+
+from __future__ import annotations
+
 import shutil
-import re
-
-# --- CONFIGURATION ---
-INPUT_DIR = "paper/arxiv"
-OUTPUT_DIR = "arxiv_submission"
-ZIP_NAME = "submission_v1.zip"
+import zipfile
+from pathlib import Path
 
 
-def check_unescaped_percent(directory):
-    """Scans .tex files for '%' signs not preceded by '\'."""
-    pattern = re.compile(r'(?<!\\)%')
-    issues_found = False
-    
-    print("Checking for unescaped '%' in math/text...")
-    for root, _, files in os.walk(directory):
-        for file in files:
-            if file.endswith(".tex"):
-                path = os.path.join(root, file)
-                with open(path, 'r', encoding='utf-8') as f:
-                    for i, line in enumerate(f, 1):
-                        # Ignore lines that are clearly just comments
-                        if line.strip().startswith('%'):
-                            continue
-                        if pattern.search(line):
-                            print(f"Potential issue in {file} (Line {i}): {line.strip()}")
-                            issues_found = True
-    return issues_found
+INPUT_DIR = Path("paper/arxiv")
+OUTPUT_DIR = Path("arxiv_submission")
+ZIP_PATH = Path("submission_v1.zip")
+
+INCLUDE_FILES = (
+    "audit_probes_technical_report.tex",
+    "README.md",
+    "figures/data_flow_cover_v010.png",
+    "figures/telemetry_baseline_v010.png",
+)
 
 
-def main():
-    # 1. Run Safety Check
-    # Check the INPUT_DIR first to fix them before distilling
-    warning = check_unescaped_percent(INPUT_DIR)
-    if warning:
-        proceed = input("Unescaped '%' found. They might break your math. Proceed anyway? (y/n): ")
-        if proceed.lower() != 'y':
-            return
+def copy_source_package() -> None:
+    if OUTPUT_DIR.exists():
+        shutil.rmtree(OUTPUT_DIR)
+    OUTPUT_DIR.mkdir(parents=True)
 
-    # 2. Clean the LaTeX
-    print(f"Distilling {INPUT_DIR}...")
-    subprocess.run(["arxiv_latex_cleaner", INPUT_DIR, "--output_full_path", OUTPUT_DIR])
+    for relative_name in INCLUDE_FILES:
+        source = INPUT_DIR / relative_name
+        if not source.exists():
+            raise FileNotFoundError(f"Missing required arXiv source file: {source}")
 
-    # 3. Zip it for ArXiv
-    print(f"Zipping for ArXiv: {ZIP_NAME}...")
-    shutil.make_archive(ZIP_NAME.replace(".zip", ""), 'zip', OUTPUT_DIR)
+        destination = OUTPUT_DIR / relative_name
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(source, destination)
 
-    print(f"Ready! Upload {ZIP_NAME} to arXiv.")
+
+def zip_source_package() -> None:
+    if ZIP_PATH.exists():
+        ZIP_PATH.unlink()
+
+    with zipfile.ZipFile(ZIP_PATH, "w", compression=zipfile.ZIP_DEFLATED) as archive:
+        for path in sorted(OUTPUT_DIR.rglob("*")):
+            if path.is_file():
+                archive.write(path, path.relative_to(OUTPUT_DIR))
+
+
+def main() -> None:
+    copy_source_package()
+    zip_source_package()
+    print(f"Ready for arXiv source upload: {ZIP_PATH}")
 
 
 if __name__ == "__main__":

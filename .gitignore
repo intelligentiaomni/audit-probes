@@ -67,4 +67,5 @@ paper/**/*.log
 paper/**/*.out
 paper/**/*.pdf
 paper/**/*.synctex.gz
+arxiv_submission/
 *.zip
