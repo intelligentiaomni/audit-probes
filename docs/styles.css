@@ -5,9 +5,9 @@
   --paper: #faf9f6;
   --surface: #ffffff;
   --line: #d9ddd6;
-  --green: #12664f;
-  --green-dark: #0b4638;
-  --rust: #a6452a;
+  --blue: #7085FF;
+  --blue-dark: #5146D1;
+  --blue-medium-light: #6366f1;
   --gold: #c79a2f;
 }
 
@@ -24,7 +24,7 @@ body {
 }
 
 a {
-  color: var(--green-dark);
+  color: var(--blue-dark);
   text-decoration-thickness: 0.08em;
   text-underline-offset: 0.18em;
 }
@@ -74,7 +74,7 @@ img {
 
 .eyebrow {
   margin: 0 0 14px;
-  color: var(--rust);
+  color: var(--blue-medium-light);
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0;
@@ -117,7 +117,7 @@ h2 {
   justify-content: center;
   min-height: 44px;
   padding: 0 18px;
-  border: 1px solid var(--green-dark);
+  border: 1px solid var(--blue-dark);
   border-radius: 6px;
   font-weight: 750;
   text-decoration: none;
@@ -125,11 +125,11 @@ h2 {
 
 .button.primary {
   color: #ffffff;
-  background: var(--green-dark);
+  background: var(--blue-dark);
 }
 
 .button.secondary {
-  color: var(--green-dark);
+  color: var(--blue-dark);
   background: transparent;
 }
 
