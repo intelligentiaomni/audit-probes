@@ -43,8 +43,21 @@ Automation was used only for non-critical scaffolding and boilerplate support. C
 
 ---
 
+## Development
+
+Install local development tools with:
+
+```bash
+pip install -e ".[dev]"
+```
+
+Run the validation suite from the repository root with:
+
+```bash
+PYTHONPATH=src python -m pytest
+```
+
 ### Methodology [Logic](./docs/METHODOLOGY.md)
-### Technical Report Insert [Metrics and Figures](./docs/TECH_REPORT_SECTION.md)
 ### Notes [Theoretical Background](./docs/NOTES.md)
 ### Verification [Limitations](./docs/VERIFICATION.md)
 

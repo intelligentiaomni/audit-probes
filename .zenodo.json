@@ -1,0 +1,29 @@
+{
+  "title": "Audit Probes",
+  "upload_type": "software",
+  "description": "Minimal cross-domain audit probes for reproducible software supply-chain review, telemetry validation, and cloud/API observability.",
+  "creators": [
+    {
+      "name": "Lee, L. S."
+    }
+  ],
+  "access_right": "open",
+  "license": "MIT",
+  "version": "0.1.0",
+  "keywords": [
+    "audit probes",
+    "systemic risk",
+    "software supply chain",
+    "telemetry validation",
+    "cloud observability",
+    "minimum viable disclosure",
+    "reproducible audit evidence"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/intelligentiaomni/audit-probes",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}

@@ -1,12 +1,11 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": null,
+  "outputDirectory": "docs",
   "rewrites": [
     {
-      "source": "/assets/(.*)",
-      "destination": "/docs/assets/$1"
-    },
-    {
       "source": "/(.*)",
-      "destination": "/docs/$1"
+      "destination": "/$1"
     }
   ]
 }

@@ -6,11 +6,12 @@ technical report.
 ## Candidate Metadata
 
 - Title: Cross-Domain Audit Probes: Minimal Instrumentation for Reproducible Systemic-Risk Interrogation
-- Suggested primary category: `cs.SE` or `cs.CR`
-- Possible cross-list: `cs.CY` if arXiv category availability and moderation fit
+- Suggested primary category: `cs.SE`
+- Possible cross-list: `cs.CR` if the final abstract emphasizes security assurance and audit evidence.
+- Avoid `cs.CY` unless the final manuscript adds a substantive policy, legal, educational, or social-impact contribution.
 - Format: LaTeX source preferred
 - Main file: `audit_probes_technical_report.tex`
-- Code field: use the Zenodo DOI generated from the GitHub release.
+- Code field: use the Zenodo DOI generated from the GitHub release when available; otherwise use the repository URL and update the arXiv record after DOI minting.
 
 ## Submission Checks
 

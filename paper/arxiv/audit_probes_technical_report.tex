@@ -4,12 +4,10 @@
 \usepackage[hyphens]{url}
 \usepackage[colorlinks=true, allcolors=blue, hypertexnames=false]{hyperref}
 \usepackage{caption}
-% Sets caption text to small and Sans Serif
-% Sets 'Figure 1:' label to small, Bold, and Sans Serif
 \captionsetup[figure]{
     font={small,sf}, 
     labelfont={bf,sf},
-    skip=10pt % adds space between figure and caption
+    skip=10pt
 }
 \usepackage{amsmath}
 \usepackage{booktabs}
@@ -27,31 +25,26 @@
 \usetikzlibrary{arrows.meta,positioning}
 \setlength{\emergencystretch}{3em}
 
-% Set up title metadata
 \title{Cross-Domain Audit Probes: Minimal Instrumentation for Reproducible Systemic-Risk Interrogation}
 \author{L.S. Lee}
 \date{May 2026}
 
-% Define the cover image here
 \titlepic{\includegraphics[width=0.6\textwidth]{figures/data_flow_cover_v010.png}}
 
 \begin{document}
 
-% --- TITLE PAGE (No Numbering) ---
 \maketitle
-\thispagestyle{empty} % Removes number from first page only
+\thispagestyle{empty}
 \newpage
 
-% --- ABSTRACT (Roman Numbering) ---
 \pagenumbering{roman} 
 \begin{abstract}
 The initial parameters for \texttt{audit-probes} are established as a minimal Python artifact for reproducible interrogation across software supply-chain review, telemetry handling, and cloud/API observability. It addresses the practical tension between mission-critical and agent-assisted systems: the need to
 produce verifiable audit evidence without expanding the telemetry surface into an operational or adversarial liability. This work reconciles the trade-offs inherent to this dichotomy as an information-resistance problem and proposes ``minimum viable disclosure'' as an architectural principle for bounded, inspectable traces. The current implementation is not a production security platform. It is a deterministic baseline whose evidence consists of module outputs, JSON schemas, and test-log metrics. In the current repository state, eleven of eleven executed tests pass, the executed pass/fail entropy is (0.000000) bits, and the inclusive pass/skip log-outcome entropy is (0.000000) bits. \end{abstract}
 \newpage
 
-% --- INTRODUCTION (Arabic Numbering) ---
 \pagenumbering{arabic}
-\setcounter{page}{1} % Resets counter to 1
+\setcounter{page}{1}
 
 \section{Introduction}
 Modern technical systems often fail at the boundaries of source-code provenance and deployment, telemetry data versus preprocessing assumptions, in addition to the divide between cloud-provider claims and empirical measurements. The \texttt{audit-probes} artifact investigates whether foundational deterministic probes can make these perimeters more observable without introducing opaque model complexity.
@@ -106,7 +99,6 @@ The cybernetic principles established by Wiener, yield a closed loop of signalin
         trace_box/.style={draw, rectangle, minimum width=3cm, minimum height=2.5cm, thick},
         arrow/.style={-{Stealth[scale=1.2]}, thick}
     ]
-        % --- Nodes ---
         \node[system_box] (system) {};
         \node[above=0.1cm of system] {\textbf{Internal State}};
         
@@ -121,11 +113,9 @@ The cybernetic principles established by Wiener, yield a closed loop of signalin
         \draw[thick] ([xshift=0.4cm, yshift=-0.5cm]trace.north west) rectangle ([xshift=-0.4cm, yshift=-2cm]trace.north east);
         \node[scale=0.7] at (trace.center) {\{ JSON \}};
     
-        % --- Arrows ---
         \draw[arrow] (system.east) -- (mvd.west) node[midway, above, scale=0.8] {Telemetry};
         \draw[arrow] (mvd.east) -- (trace.west) node[midway, above, scale=0.8] {Evidence};
     
-        % --- Annotations ---
         \node[below=0.5cm of system, align=center, gray] (low) {\scriptsize Opaque / Black-box \\ \textit{Risk: Unverifiable}};
         \node[below=0.5cm of trace, align=center, gray] (high) {\scriptsize Fully Transparent \\ \textit{Risk: Adversarial Map}};
         
@@ -208,7 +198,7 @@ The following analysis evaluates the current implementation (detailed as version
     \caption{Version 0.1.0 baseline performance summary (Resolved Environment).}
     \label{tab:performance}
     \small
-    \begin{tabularx}{\textwidth}{l X r} % Left-aligned, expanding middle, right-aligned
+    \begin{tabularx}{\textwidth}{l X r}
         \toprule
         \textbf{Metric category} & \textbf{KPI} & \textbf{Baseline value} \\ \midrule
         Operational integrity & Test execution success rate & 100.000000\% \\
@@ -232,7 +222,7 @@ future cryptographic anchoring.
 
 The central policy and engineering tension is the glasshouse dilemma. A system that exposes all internal state, offers ease of inspection but invites unauthorized mapping and exploitation. Conversely, a black-box system shields internal logic while leaving auditors unable to verify behavior. Minimum viable disclosure resolves this conflict by providing bounded evidence without exposing unlimited internals.
 
-\begin{figure}[htbp] % <--- Ensure this opening tag is here
+\begin{figure}[htbp]
     \centering
     \vspace{1em}
     
@@ -247,10 +237,10 @@ The central policy and engineering tension is the glasshouse dilemma. A system t
         \end{equation}
     \end{minipage}
     
-    \vspace{1em} % Add space before the caption
+    \vspace{1em}
     
     \caption*{Figure 1: \textbf{The Glasshouse Dilemma.} Visualizing information resistance as the divide between internal state and deterministic audit artifacts (Equation \ref{eq:shannon_entropy}). The prototype achieves a zero-entropy baseline (Equation \ref{eq:baseline_val}).}
-\end{figure} % <--- Matches the opening tag
+\end{figure}
 
 \subsection{Mapping to Security Controls}
 
@@ -258,7 +248,7 @@ The current system aligns most naturally with audit and integrity goals: determi
 
 \section{Access-Gated version 0.2.0 Targets}
 
-Within the scope of the preliminary release, public contributions to KTH Royal Institute of Technology and the CHAINS research project about "Consistent Hardening and Analysis of Software Supply Chains" \cite{chains-project} could not be verified as evidence for the baseline. Specific external repositories are therefore not referred to as results in Section~\ref{sec:reproducibility}. Adjacent projects stemming from KTH Rymdcenter and other Space Agencies are treated as access-gated candidates. Mist Lab in Montreal, Canada \cite{mistlab}, is noted only as a possible research target for the proposed methodology, not as traceability for the existing framework. Integration in the future enhanced system is contingent upon formal recording of the repository URL, access permissions, commit hashes, licensing, and defined audit scope.
+Within the scope of the preliminary release, public contributions to KTH Royal Institute of Technology and the CHAINS research project about "Consistent Hardening and Analysis of Software Supply Chains" \cite{chains-project} could not be verified as evidence for the baseline. Specific external repositories are therefore not referred to as results in Section~\ref{sec:reproducibility}. Adjacent projects stemming from KTH Rymdcenter and other Space Agencies are treated as access-gated candidates. Integration in the future enhanced system is contingent upon formal recording of the repository URL, access permissions, commit hashes, licensing, and defined audit scope.
 
 \section{Limitations}
 
@@ -313,11 +303,6 @@ arXiv
 \bibitem{chains-project}
 \newblock CHAINS research project 
 \newblock \url{https://github.com/chains-project}.
-\newblock Accessed May 2026.
-
-\bibitem{mistlab}
-\newblock Mist Lab.
-\newblock \url{https://github.com/mistlab}.
 \newblock Accessed May 2026.
 
 \bibitem{shannon}
