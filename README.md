@@ -1,5 +1,7 @@
 # Audit Probes
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20178117.svg)](https://doi.org/10.5281/zenodo.20178117)
+
 **Stress-testing systemic friction and bridging observability gaps within mission-critical infrastructures.**
 
 **Audit Probes** is an intentionally minimal research- and open-source instrumentation toolkit organized around three modules: `cyber_audit`, `telemetry_pipeline`, and `cloud_probe`. Its purpose is not to present a production-ready platform, but to show reproducible technical work across software assurance, telemetry handling, and infrastructure measurement.
@@ -63,9 +65,8 @@ PYTHONPATH=src python -m pytest
 
 ## Citation
 
-This repository is prepared for archival through the Zenodo-GitHub integration.
-After creating a Zenodo release, use the generated DOI in the arXiv submission
-`Code` field and update the DOI placeholder below.
+This repository is archived through the Zenodo-GitHub integration. Use the DOI
+below in the arXiv submission `Code` field.
 
 ```bibtex
 @software{lee_audit_probes_2026,
@@ -75,7 +76,7 @@ After creating a Zenodo release, use the generated DOI in the arXiv submission
   version = {0.1.0},
   license = {MIT},
   url = {https://github.com/intelligentiaomni/audit-probes},
-  doi = {TO_BE_ASSIGNED_BY_ZENODO}
+  doi = {10.5281/zenodo.20178117}
 }
 ```
 

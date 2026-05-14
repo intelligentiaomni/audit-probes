@@ -7,6 +7,7 @@ authors:
     given-names: "L.S."
 repository-code: "https://github.com/intelligentiaomni/audit-probes"
 url: "https://github.com/intelligentiaomni/audit-probes"
+doi: "10.5281/zenodo.20178117"
 license: "MIT"
 version: "0.1.0"
 date-released: "2026-05-04"

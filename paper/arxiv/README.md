@@ -11,7 +11,7 @@ technical report.
 - Avoid `cs.CY` unless the final manuscript adds a substantive policy, legal, educational, or social-impact contribution.
 - Format: LaTeX source preferred
 - Main file: `audit_probes_technical_report.tex`
-- Code field: use the Zenodo DOI generated from the GitHub release when available; otherwise use the repository URL and update the arXiv record after DOI minting.
+- Code field: `https://doi.org/10.5281/zenodo.20178117`
 
 ## Submission Checks
 
@@ -22,7 +22,7 @@ technical report.
 - Include every required figure file if external figures are introduced.
 - Keep figure references relative to this source directory, for example `figures/telemetry_baseline_v010.png`.
 - Verify title, abstract, author, category, license, and repository URL before submission.
-- Confirm the GitHub repository is connected to Zenodo and that the final Zenodo DOI is entered in the arXiv `Code` field.
+- Confirm the final Zenodo DOI is entered in the arXiv `Code` field: `https://doi.org/10.5281/zenodo.20178117`.
 - Confirm any KTH-adjacent or access-gated target has permission, commit hash, license, and audit scope before citing it as evidence.
 - For visibility planning, prefer a Wednesday or Thursday submission before 14:00 ET when the paper is otherwise ready.
 
