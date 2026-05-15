@@ -73,7 +73,7 @@ below in the arXiv submission `Code` field.
   author = {Lee, L. S.},
   title = {Audit Probes},
   year = {2026},
-  version = {0.1.0},
+  version = {0.1.2},
   license = {MIT},
   url = {https://github.com/intelligentiaomni/audit-probes},
   doi = {10.5281/zenodo.20178117}

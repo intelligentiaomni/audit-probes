@@ -28,11 +28,11 @@ technical report.
 
 ## Current Status
 
-This is a draft manuscript source, not a final arXiv submission package. It has
+This is a draft manuscript source package prepared for arXiv review. It has
 been consolidated from the longer technical-report draft by keeping verified
 repository metrics as results and moving unsupported agentic/cryptographic
-claims into the roadmap. The next step is to compile the TeX locally and review
-the resulting PDF for layout, category fit, and moderation risk.
+claims into the roadmap. The TeX has been compiled locally; before submission,
+review the resulting PDF for layout, category fit, and moderation risk.
 
 The citation and name-reference list has not yet been fully updated or
 rechecked. Before submission, verify every reference, URL, access date, author

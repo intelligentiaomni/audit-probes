@@ -9,8 +9,8 @@ repository-code: "https://github.com/intelligentiaomni/audit-probes"
 url: "https://github.com/intelligentiaomni/audit-probes"
 doi: "10.5281/zenodo.20178117"
 license: "MIT"
-version: "0.1.0"
-date-released: "2026-05-04"
+version: "0.1.2"
+date-released: "2026-05-15"
 abstract: "Minimal cross-domain audit probes for reproducible software supply-chain review, telemetry validation, and cloud/API observability."
 keywords:
   - audit probes
