@@ -76,7 +76,7 @@ below in the arXiv submission `Code` field.
   version = {0.1.3},
   license = {MIT},
   url = {https://github.com/intelligentiaomni/audit-probes},
-  doi = {10.5281/zenodo.20204042}
+  doi = {https://doi.org/10.5281/zenodo.20269027}
 }
 ```
 
