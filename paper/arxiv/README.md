@@ -11,7 +11,7 @@ technical report.
 - Avoid `cs.CY` unless the final manuscript adds a substantive policy, legal, educational, or social-impact contribution.
 - Format: LaTeX source preferred
 - Main file: `audit_probes_technical_report.tex`
-- Code field: `https://doi.org/10.5281/zenodo.20178117`
+- Code field: `https://doi.org/10.5281/zenodo.20204042`
 
 ## Submission Checks
 
@@ -22,7 +22,7 @@ technical report.
 - Include every required figure file if external figures are introduced.
 - Keep figure references relative to this source directory, for example `figures/telemetry_baseline_v010.png`.
 - Verify title, abstract, author, category, license, and repository URL before submission.
-- Confirm the final Zenodo DOI is entered in the arXiv `Code` field: `https://doi.org/10.5281/zenodo.20178117`.
+- Confirm the final Zenodo DOI is entered in the arXiv `Code` field: `https://doi.org/10.5281/zenodo.20204042`.
 - Confirm any KTH-adjacent or access-gated target has permission, commit hash, license, and audit scope before citing it as evidence.
 - For visibility planning, prefer a Wednesday or Thursday submission before 14:00 ET when the paper is otherwise ready.
 
@@ -34,6 +34,7 @@ repository metrics as results and moving unsupported agentic/cryptographic
 claims into the roadmap. The TeX has been compiled locally; before submission,
 review the resulting PDF for layout, category fit, and moderation risk.
 
-The citation and name-reference list has not yet been fully updated or
-rechecked. Before submission, verify every reference, URL, access date, author
-name, and in-text citation against the final claims.
+The citation and name-reference list has been corrected to remove accidental
+repository-system documentation entries. Before submission, verify every
+reference, URL, access date, author name, and in-text citation against the final
+claims.
