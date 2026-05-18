@@ -1,6 +1,6 @@
 # Audit Probes
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20204042.svg)](https://doi.org/10.5281/zenodo.20204042)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20269027.svg)](https://doi.org/10.5281/zenodo.20269027)
 
 **Stress-testing systemic friction and bridging observability gaps within mission-critical infrastructures.**
 
